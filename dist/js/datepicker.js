@@ -969,6 +969,8 @@
                             this.selectDate(this.focused);
                         } else if (alreadySelected && this.opts.toggleSelected){
                             this.removeDate(this.focused);
+                        } else if (this.opts.autoClose && !this.opts.toggleSelected) {
+                            this.hide();
                         }
                     }
                 }
@@ -1512,6 +1514,8 @@
                 this.d.selectDate(selectedDate);
             } else if (alreadySelected && this.opts.toggleSelected){
                 this.d.removeDate(selectedDate);
+            } else if (this.opts.autoClose && !this.opts.toggleSelected) {
+                this.d.hide();
             }
 
         },
